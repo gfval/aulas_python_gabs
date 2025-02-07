@@ -1,0 +1,28 @@
+name: Check for Empty Files
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-empty-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find empty files
+        run: |
+          EMPTY_FILES=$(find . -type f ! -path "*/.git/*" -empty)
+          if [ -n "$EMPTY_FILES" ]; then
+            echo "Erro: Os seguintes arquivos estão vazios:" >&2
+            echo "$EMPTY_FILES" >&2
+            exit 1
+          fi
+
+      - name: Success Message
+        run: echo "✅ Nenhum arquivo vazio encontrado!"
