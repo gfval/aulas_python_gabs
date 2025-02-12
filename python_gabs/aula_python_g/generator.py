@@ -102,5 +102,5 @@ list_tempo = time.time() - list_inicio
 
 print(f"O generator demorou {gen_tempo} segundos")
 #  Demorou 50.41 (Usando aproximadamente 600Mb)
-print(f"List comprehension demorou {list_tempo} segundos")
+print(f"List comprehenseion demorou {list_tempo} segundos")
 #  Demorou 663.70(Usando 13Gb de memoria)
