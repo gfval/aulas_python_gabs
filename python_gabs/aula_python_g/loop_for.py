@@ -1,4 +1,5 @@
-"""nome = "Gabis"
+"""
+nome = "Gabis"
 lista = [1, 2, 3, 4, 5]
 numero = range(1, 10)
 for letra in nome:

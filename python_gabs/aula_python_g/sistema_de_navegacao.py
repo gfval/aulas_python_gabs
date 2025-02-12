@@ -49,10 +49,7 @@ os.path.dirname(caminho)	|   Retorna o diretório do arquivo.
 os.path.abspath(caminho)	|   Retorna o caminho absoluto.
 os.path.getsize(caminho)	|   Retorna o tamanho de um arquivo.
 
-
-"""
-import os
-
+////////////////////////////////////////////////////////////////////////////////////
 # Obtendo diretório atual
 print("Diretório atual:", os.getcwd())
 
@@ -63,8 +60,58 @@ os.mkdir("nova_pasta")
 print("Arquivos na pasta:", os.listdir("."))
 
 # Removendo a pasta criada
-os.rmdir("nova?pasta")
+os.rmdir("nova_pasta")
 
 print(os.environ)
 os.getenv("ALLUSERSPROFILE")
 print(os.getenv("ALLUSERSPROFILE"))
+
+# Descobrindo se um arquivo ou diretorio existe.
+print(os.path.exists("text.txt"))  # False
+
+# Path relativo
+relative_path = os.path.abspath(
+    "aulas_python_gabs\\python_gabs\\aula_python_g"
+)
+print(os.path.exists(relative_path))  # False
+
+# Path absoluto
+absolute_path =
+"C:\\Users\\Val\\Documents\\GitHub\\aulas_python_gabs\\python_gabs\\aula_python_g"
+print(os.path.exists(absolute_path))  # True
+
+////////////////////////////////////////////////////////////////////////////////////
+import os
+from pathlib import Path
+
+#  Nao funciona em windows
+os.mknod("Nome_do_aqruivo.txt", "w")
+os.mknod("C:\\User\\Val\\Documents\\GitHub\\aulas_python_gabs.txt", "w")
+
+#  Para Windows e outros
+with open("Novo_arquivo2.txt", "w") as arquivo:
+    pass
+
+#  Ou
+open("Novo_arquivo3.txt", "w").close()
+
+#  Ou usando pathlib
+Path("Novo_arquivo4").touch()
+
+os.makedirs("teste1\\tenta\\tiva")
+with open("teste1\\tenta\\tiva", "w") as T1:
+    T1.write("Hello word!")
+
+#  Arquivos e diretorios temporarios
+import os
+import tempfile
+
+with tempfile.TemporaryDirectory() as tmp:
+    print(f"Arquivo temporario criado em {tmp}")
+    with open(os.path.join(tmp, "arquivo_temporario.txt"), "w") as arquivo:
+        arquivo.write("Primeito temp\n")
+    input()
+
+#  Assim que o script sair do with os arquivos sao deletados.
+
+"""

@@ -88,7 +88,7 @@ with open("fruta.txt", "a") as arquivo:
     while True:
         fruta = input("informe uma fruta:")
         if fruta in obj:
-            raise ValueError("Digite uma fruta, nao um numero")
+            raise ValueError("Digite uma fruta, nao um objeto")
         elif fruta == int or float:
             raise ValueError("Digite uma fruta, nao um numero")
         elif fruta != "sair" or "Sair":
