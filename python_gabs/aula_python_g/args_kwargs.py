@@ -166,7 +166,7 @@ print(f'O volume da esfera eh {esfera(volume)}')
 
 # Usando datetime
 
-from datetime  import datetime
+from datetime import datetime
 import locale
 
 # Definir idioma para português
