@@ -101,14 +101,17 @@ class Usuario:
     bool
         The current access status of the user.
     """
+    contador = 0  # Atributo de classe
 
-    def __init__(self, nome, email, senha):
+    def __init__(self, nome, email, senha):  # Método construtor
         self.nome = nome
         self.email = email
         self.senha = senha
+        self.id = Usuario.contador + 1
+        Usuario.contador = self.id
         self.__acesso = False
 
-    def login(self, email, senha):
+    def login(self, email, senha):  # Método para verificar o email e senha
         if self.email == email and self.senha == senha:
             self.__acesso = True
             return "Acesso permitido"
@@ -122,6 +125,7 @@ class Usuario:
 
 User = Usuario("Gabs", "User@gmail.com", "123456")
 # Instanciando um objeto da classe Usuario
+# User eh um objeto da classe Usuario
 email = input("Digite seu email: ")
 senha = input("Digite sua senha: ")
 print(User.login(email, senha))
