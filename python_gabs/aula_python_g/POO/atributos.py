@@ -103,7 +103,7 @@ class Usuario:
     """
     contador = 0  # Atributo de classe
 
-    def __init__(self, nome, email, senha):  # Método construtor
+    def __init__(self, nome, email, senha):  # __init__ Método construtor
         self.nome = nome
         self.email = email
         self.senha = senha
@@ -116,7 +116,6 @@ class Usuario:
             self.__acesso = True
             return "Acesso permitido"
         else:
-            self.__acesso = False
             return "Acesso negado"
 
     def status_acesso(self):
